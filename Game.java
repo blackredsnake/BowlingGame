@@ -3,14 +3,18 @@ package BowlingGame;
 public class Game {
     private int rolls[] = new  int[21];
     private int currentRoll =0;
-    private int score = 0;
     public void roll(int pins) {
         rolls[currentRoll++]=pins;
     }
 
     public int score() {
-        for (int i = 0; i < rolls.length; i++) {
-            score+= rolls[i];
+        int score = 0;
+        int i = 0;
+        for (int frame = 0 ; frame <10;frame++) {
+            if(rolls[i] + rolls[i+1]==10)//spare
+                score+=rolls[i+2];
+            score+= rolls[i]+rolls[i+1];
+            i+=2;
         }
         return  score;
     }

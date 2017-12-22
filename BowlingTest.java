@@ -2,7 +2,6 @@ package BowlingGame;
 
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class BowlingTest {
@@ -33,7 +32,8 @@ public class BowlingTest {
         Assert.assertEquals(20,game.score());
     }
 
-    @Ignore@Test
+
+    @Test
     public void oneSpare() throws Exception {
         game.roll(5);
         game.roll(5); //spare
